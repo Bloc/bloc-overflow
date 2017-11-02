@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  scope '/api' do
-    # resources :somethings
-  end
+  mount_devise_token_auth_for 'User', at: 'auth'
+    scope '/api' do
+      # resources :blocapi
+    end
 end
