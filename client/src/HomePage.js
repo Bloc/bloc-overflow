@@ -16,7 +16,7 @@ class HomePage extends Component {
         </Container>
         {questions.map((question) =>
           <Container>
-              <h3>{question.title}</h3>
+              <h3><Link to='/api/questions/${question.id}'>{question.title}</Link></h3>
               <p>{question.description}</p>
           </Container>
         )}
