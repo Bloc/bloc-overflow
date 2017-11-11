@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import HomePage from './HomePage'
 import OtherPage from './OtherPage'
+import QuestionRead from './QuestionRead'
 import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
 
 class App extends Component {
@@ -51,6 +52,9 @@ class App extends Component {
         )}/>
         <Route path='/other' render={() => (
           <OtherPage />
+        )}/>
+        <Route path='/questions/:id' render={() => (
+          <QuestionRead />
         )}/>
       </Container>
     : <Container text>
