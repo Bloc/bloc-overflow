@@ -13,6 +13,7 @@ class App extends Component {
     }
     this.getData = this.getData.bind(this)
     this.getQuestions = this.getQuestions.bind(this)
+    this.getQuestion = this.getQuestion.bind(this)
   }
   componentDidMount () {
     this.getQuestions()
@@ -41,6 +42,11 @@ class App extends Component {
       })
   }
 
+  getQuestion (id) {
+    this.fetch(`api/questions/${id}`)
+      .then(question => this.setState({question: question}))
+  }
+
   render () {
     let data = this.state
     return data
@@ -54,7 +60,9 @@ class App extends Component {
           <OtherPage />
         )}/>
         <Route path='/questions/:id' render={() => (
-          <QuestionRead />
+          <QuestionRead
+            question = { this.state.question }
+          />
         )}/>
       </Container>
     : <Container text>

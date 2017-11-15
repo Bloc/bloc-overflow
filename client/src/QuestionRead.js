@@ -4,9 +4,10 @@ import { Container } from 'semantic-ui-react'
 class QuestionRead extends Component {
   render() {
     return (
-      <Container>
-              Hello, world!
-      </Container>
+        <Container>
+          <h1>{this.props.question.title}</h1>
+          <p>{this.props.question.description}</p>
+        </Container>
     )
   }
 }
